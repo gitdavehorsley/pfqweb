@@ -13,30 +13,31 @@
 </head>
 <body class="bg-light text-dark">
   <!-- Header -->
-  <header class="bg-white shadow-sm sticky top-0 z-50">
+  <header class="bg-white dark:bg-dark/95 shadow-sm sticky top-0 z-50 transition-colors duration-300">
     <div class="container-custom py-4">
       <div class="flex items-center justify-between">
         <div class="flex items-center">
-          <a href="#" class="text-2xl font-heading font-bold text-primary">PFQ</a>
+          <a href="#" class="text-2xl font-heading font-bold gradient-text">PFQ</a>
         </div>
         
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex space-x-8">
-          <a href="#home" class="font-medium hover:text-primary transition-colors">Home</a>
-          <a href="#features" class="font-medium hover:text-primary transition-colors">Features</a>
-          <a href="#about" class="font-medium hover:text-primary transition-colors">About</a>
-          <a href="#contact" class="font-medium hover:text-primary transition-colors">Contact</a>
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="#features" class="nav-link">Features</a>
+          <a href="#testimonials" class="nav-link">Testimonials</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#contact" class="nav-link">Contact</a>
         </nav>
         
         <!-- Theme Toggle -->
-        <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100">
+        <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
           </svg>
         </button>
         
         <!-- Mobile Menu Button -->
-        <button id="mobile-menu-button" class="md:hidden p-2 rounded-md hover:bg-gray-100">
+        <button id="mobile-menu-button" class="md:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -46,43 +47,668 @@
       <!-- Mobile Menu -->
       <div id="mobile-menu" class="md:hidden hidden pt-4 pb-2">
         <nav class="flex flex-col space-y-4">
-          <a href="#home" class="font-medium hover:text-primary transition-colors">Home</a>
-          <a href="#features" class="font-medium hover:text-primary transition-colors">Features</a>
-          <a href="#about" class="font-medium hover:text-primary transition-colors">About</a>
-          <a href="#contact" class="font-medium hover:text-primary transition-colors">Contact</a>
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="#features" class="nav-link">Features</a>
+          <a href="#testimonials" class="nav-link">Testimonials</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#contact" class="nav-link">Contact</a>
         </nav>
       </div>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section id="home" class="section bg-gradient-to-br from-primary/10 to-secondary/10">
+  <section id="home" class="section bg-gradient-to-br from-primary/10 to-secondary/10 dark:from-primary/20 dark:to-secondary/20 overflow-hidden">
     <div class="container-custom">
       <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6">
-            Welcome to <span class="text-primary">PFQ</span>
+        <div class="animate-on-scroll" data-animation="slide-right">
+          <span class="inline-block px-3 py-1 bg-primary/10 dark:bg-primary/20 text-primary rounded-full text-sm font-medium mb-4">
+            Welcome to the Future
+          </span>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 text-shadow-lg">
+            Discover the <span class="typewriter text-gradient">Power of PFQ</span>
           </h1>
-          <p class="text-lg mb-8">
+          <p class="text-lg mb-8 text-gray-700 dark:text-gray-300">
             A modern web application with a responsive and user-friendly interface.
             Designed to provide an exceptional user experience.
           </p>
           <div class="flex flex-wrap gap-4">
             <a href="#features" class="btn btn-primary">Explore Features</a>
-            <a href="#contact" class="btn border border-dark hover:bg-dark hover:text-white">Contact Us</a>
+            <a href="#contact" class="btn border border-dark dark:border-light hover:bg-dark hover:text-white dark:text-white dark:hover:bg-white dark:hover:text-dark">Contact Us</a>
+          </div>
+          
+          <!-- Stats -->
+          <div class="grid grid-cols-3 gap-4 mt-12">
+            <div class="text-center">
+              <div class="text-3xl font-bold text-primary counter" data-target="99">0</div>
+              <div class="text-sm text-gray-600 dark:text-gray-400">Happy Clients</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-secondary counter" data-target="15">0</div>
+              <div class="text-sm text-gray-600 dark:text-gray-400">Team Members</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-accent counter" data-target="5">0</div>
+              <div class="text-sm text-gray-600 dark:text-gray-400">Years Experience</div>
+            </div>
           </div>
         </div>
-        <div class="flex justify-center">
+        <div class="flex justify-center animate-on-scroll" data-animation="slide-left">
           <div class="relative w-full max-w-md">
-            <div class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-lg blur opacity-25"></div>
-            <div class="relative bg-white p-6 rounded-lg shadow-xl">
-              <div class="h-64 bg-gray-200 rounded-md flex items-center justify-center">
-                <span class="text-gray-500">Hero Image</span>
+            <div class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-lg blur opacity-25 animate-pulse-slow"></div>
+            <div class="relative bg-white dark:bg-dark/50 p-6 rounded-lg shadow-xl">
+              <div class="h-64 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-md flex items-center justify-center overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" 
+                     alt="Team working on digital products" 
+                     class="w-full h-full object-cover">
               </div>
             </div>
           </div>
         </div>
       </div>
+      
+      <!-- Floating Elements (Decorative) -->
+      <div class="absolute top-20 left-10 w-20 h-20 bg-primary/10 rounded-full blur-xl animate-bounce-slow hidden lg:block"></div>
+      <div class="absolute bottom-20 right-10 w-32 h-32 bg-secondary/10 rounded-full blur-xl animate-pulse-slow hidden lg:block"></div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="section">
+    <div class="container-custom">
+      <div class="text-center mb-12 animate-on-scroll" data-animation="fade-in">
+        <span class="inline-block px-3 py-1 bg-secondary/10 dark:bg-secondary/20 text-secondary rounded-full text-sm font-medium mb-4">
+          Powerful Features
+        </span>
+        <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">What Makes Us Different</h2>
+        <p class="max-w-2xl mx-auto text-gray-600 dark:text-gray-400">
+          Discover the powerful features that make our application stand out from the rest.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="card p-6 hover-card animate-on-scroll" data-animation="slide-up">
+          <div class="feature-icon bg-primary/10 dark:bg-primary/20">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Lightning Fast</h3>
+          <p class="text-gray-600 dark:text-gray-400">
+            Optimized for speed and performance, ensuring a smooth user experience with minimal load times.
+          </p>
+        </div>
+        
+        <!-- Feature 2 -->
+        <div class="card p-6 hover-card animate-on-scroll" data-animation="slide-up">
+          <div class="feature-icon bg-secondary/10 dark:bg-secondary/20">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Secure & Reliable</h3>
+          <p class="text-gray-600 dark:text-gray-400">
+            Built with security in mind, protecting your data with end-to-end encryption and regular security audits.
+          </p>
+        </div>
+        
+        <!-- Feature 3 -->
+        <div class="card p-6 hover-card animate-on-scroll" data-animation="slide-up">
+          <div class="feature-icon bg-accent/10 dark:bg-accent/20">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Customizable</h3>
+          <p class="text-gray-600 dark:text-gray-400">
+            Tailor the application to your needs with extensive customization options and flexible configurations.
+          </p>
+        </div>
+        
+        <!-- Feature 4 -->
+        <div class="card p-6 hover-card animate-on-scroll" data-animation="slide-up">
+          <div class="feature-icon bg-primary/10 dark:bg-primary/20">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Privacy Focused</h3>
+          <p class="text-gray-600 dark:text-gray-400">
+            Your privacy is our priority, with transparent data practices and GDPR compliance built-in.
+          </p>
+        </div>
+        
+        <!-- Feature 5 -->
+        <div class="card p-6 hover-card animate-on-scroll" data-animation="slide-up">
+          <div class="feature-icon bg-secondary/10 dark:bg-secondary/20">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Cloud Integration</h3>
+          <p class="text-gray-600 dark:text-gray-400">
+            Seamlessly integrate with popular cloud services for enhanced functionality and data synchronization.
+          </p>
+        </div>
+        
+        <!-- Feature 6 -->
+        <div class="card p-6 hover-card animate-on-scroll" data-animation="slide-up">
+          <div class="feature-icon bg-accent/10 dark:bg-accent/20">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Mobile Friendly</h3>
+          <p class="text-gray-600 dark:text-gray-400">
+            Fully responsive design that works perfectly on all devices, from desktops to smartphones.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="section bg-gradient-to-br from-secondary/5 to-primary/5 dark:from-secondary/10 dark:to-primary/10 overflow-hidden">
+    <div class="container-custom">
+      <div class="text-center mb-12 animate-on-scroll" data-animation="fade-in">
+        <span class="inline-block px-3 py-1 bg-accent/10 dark:bg-accent/20 text-accent rounded-full text-sm font-medium mb-4">
+          Testimonials
+        </span>
+        <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">What Our Clients Say</h2>
+        <p class="max-w-2xl mx-auto text-gray-600 dark:text-gray-400">
+          Don't just take our word for it. Here's what our clients have to say about their experience with PFQ.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="card p-6 hover-card animate-on-scroll" data-animation="slide-up">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80" 
+                   alt="Sarah Johnson" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <h4 class="font-bold">Sarah Johnson</h4>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Marketing Director</p>
+            </div>
+          </div>
+          <div class="mb-4">
+            <div class="flex text-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            </div>
+          </div>
+          <p class="text-gray-600 dark:text-gray-400 italic">
+            "PFQ has transformed the way our team works. The intuitive interface and powerful features have significantly improved our productivity. Highly recommended!"
+          </p>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="card p-6 hover-card animate-on-scroll" data-animation="slide-up">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80" 
+                   alt="Michael Chen" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <h4 class="font-bold">Michael Chen</h4>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Tech Lead</p>
+            </div>
+          </div>
+          <div class="mb-4">
+            <div class="flex text-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            </div>
+          </div>
+          <p class="text-gray-600 dark:text-gray-400 italic">
+            "As a developer, I appreciate the clean architecture and attention to detail in PFQ. The API is well-documented and the performance is outstanding."
+          </p>
+        </div>
+        
+        <!-- Testimonial 3 -->
+        <div class="card p-6 hover-card animate-on-scroll" data-animation="slide-up">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+              <img src="https://images.unsplash.com/photo-1573497019940-1
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PFQ Web Application</title>
+  <meta name="description" content="PFQ Web Application - Modern, responsive, and user-friendly interface">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./dist/styles.css">
+  <script type="module" src="./src/main.js"></script>
+</head>
+<body class="bg-light text-dark">
+  <!-- Header -->
+  <header class="bg-white dark:bg-dark/95 shadow-sm sticky top-0 z-50 transition-colors duration-300">
+    <div class="container-custom py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          <a href="#" class="text-2xl font-heading font-bold gradient-text">PFQ</a>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-8">
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="#features" class="nav-link">Features</a>
+          <a href="#testimonials" class="nav-link">Testimonials</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+        
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
+        
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-button" class="md:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="md:hidden hidden pt-4 pb-2">
+        <nav class="flex flex-col space-y-4">
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="#features" class="nav-link">Features</a>
+          <a href="#testimonials" class="nav-link">Testimonials</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="section bg-gradient-to-br from-primary/10 to-secondary/10 dark:from-primary/20 dark:to-secondary/20 overflow-hidden">
+    <div class="container-custom">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="animate-on-scroll" data-animation="slide-right">
+          <span class="inline-block px-3 py-1 bg-primary/10 dark:bg-primary/20 text-primary rounded-full text-sm font-medium mb-4">
+            Welcome to the Future
+          </span>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 text-shadow-lg">
+            Discover the <span class="typewriter text-gradient">Power of PFQ</span>
+          </h1>
+          <p class="text-lg mb-8 text-gray-700 dark:text-gray-300">
+            A modern web application with a responsive and user-friendly interface.
+            Designed to provide an exceptional user experience.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="#features" class="btn btn-primary">Explore Features</a>
+            <a href="#contact" class="btn border border-dark dark:border-light hover:bg-dark hover:text-white dark:text-white dark:hover:bg-white dark:hover:text-dark">Contact Us</a>
+          </div>
+          
+          <!-- Stats -->
+          <div class="grid grid-cols-3 gap-4 mt-12">
+            <div class="text-center">
+              <div class="text-3xl font-bold text-primary counter" data-target="99">0</div>
+              <div class="text-sm text-gray-600 dark:text-gray-400">Happy Clients</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-secondary counter" data-target="15">0</div>
+              <div class="text-sm text-gray-600 dark:text-gray-400">Team Members</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-accent counter" data-target="5">0</div>
+              <div class="text-sm text-gray-600 dark:text-gray-400">Years Experience</div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center animate-on-scroll" data-animation="slide-left">
+          <div class="relative w-full max-w-md">
+            <div class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-lg blur opacity-25 animate-pulse-slow"></div>
+            <div class="relative bg-white dark:bg-dark/50 p-6 rounded-lg shadow-xl">
+              <div class="h-64 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-md flex items-center justify-center overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" 
+                     alt="Team working on digital products" 
+                     class="w-full h-full object-cover">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Floating Elements (Decorative) -->
+      <div class="absolute top-20 left-10 w-20 h-20 bg-primary/10 rounded-full blur-xl animate-bounce-slow hidden lg:block"></div>
+      <div class="absolute bottom-20 right-10 w-32 h-32 bg-secondary/10 rounded-full blur-xl animate-pulse-slow hidden lg:block"></div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="section">
+    <div class="container-custom">
+      <div class="text-center mb-12 animate-on-scroll" data-animation="fade-in">
+        <span class="inline-block px-3 py-1 bg-secondary/10 dark:bg-secondary/20 text-secondary rounded-full text-sm font-medium mb-4">
+          Powerful Features
+        </span>
+        <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">What Makes Us Different</h2>
+        <p class="max-w-2xl mx-auto text-gray-600 dark:text-gray-400">
+          Discover the powerful features that make our application stand out from the rest.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="card p-6 hover-card animate-on-scroll" data-animation="slide-up">
+          <div class="feature-icon bg-primary/10 dark:bg-primary/20">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Lightning Fast</h3>
+          <p class="text-gray-600 dark:text-gray-400">
+            Optimized for speed and performance, ensuring a smooth user experience with minimal load times.
+          </p>
+        </div>
+        
+        <!-- Feature 2 -->
+        <div class="card p-6 hover-card animate-on-scroll" data-animation="slide-up">
+          <div class="feature-icon bg-secondary/10 dark:bg-secondary/20">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Secure & Reliable</h3>
+          <p class="text-gray-600 dark:text-gray-400">
+            Built with security in mind, protecting your data with end-to-end encryption and regular security audits.
+          </p>
+        </div>
+        
+        <!-- Feature 3 -->
+        <div class="card p-6 hover-card animate-on-scroll" data-animation="slide-up">
+          <div class="feature-icon bg-accent/10 dark:bg-accent/20">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Customizable</h3>
+          <p class="text-gray-600 dark:text-gray-400">
+            Tailor the application to your needs with extensive customization options and flexible configurations.
+          </p>
+        </div>
+        
+        <!-- Feature 4 -->
+        <div class="card p-6 hover-card animate-on-scroll" data-animation="slide-up">
+          <div class="feature-icon bg-primary/10 dark:bg-primary/20">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Privacy Focused</h3>
+          <p class="text-gray-600 dark:text-gray-400">
+            Your privacy is our priority, with transparent data practices and GDPR compliance built-in.
+          </p>
+        </div>
+        
+        <!-- Feature 5 -->
+        <div class="card p-6 hover-card animate-on-scroll" data-animation="slide-up">
+          <div class="feature-icon bg-secondary/10 dark:bg-secondary/20">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Cloud Integration</h3>
+          <p class="text-gray-600 dark:text-gray-400">
+            Seamlessly integrate with popular cloud services for enhanced functionality and data synchronization.
+          </p>
+        </div>
+        
+        <!-- Feature 6 -->
+        <div class="card p-6 hover-card animate-on-scroll" data-animation="slide-up">
+          <div class="feature-icon bg-accent/10 dark:bg-accent/20">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Mobile Friendly</h3>
+          <p class="text-gray-600 dark:text-gray-400">
+            Fully responsive design that works perfectly on all devices, from desktops to smartphones.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="section bg-gradient-to-br from-secondary/5 to-primary/5 dark:from-secondary/10 dark:to-primary/10">
+    <div class="container-custom">
+      <div class="text-center mb-12 animate-on-scroll" data-animation="fade-in">
+        <span class="inline-block px-3 py-1 bg-accent/10 dark:bg-accent/20 text-accent rounded-full text-sm font-medium mb-4">
+          Testimonials
+        </span>
+        <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">What Our Clients Say</h2>
+        <p class="max-w-2xl mx-auto text-gray-600 dark:text-gray-400">
+          Don't just take our word for it. Here's what our clients have to say about their experience with PFQ.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="card p-6 hover-card animate-on-scroll" data-animation="slide-up">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80" 
+                   alt="Sarah Johnson" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <h4 class="font-bold">Sarah Johnson</h4>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Marketing Director</p>
+            </div>
+          </div>
+          <div class="mb-4">
+            <div class="flex text-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            </div>
+          </div>
+          <p class="text-gray-600 dark:text-gray-400 italic">
+            "PFQ has transformed the way our team works. The intuitive interface and powerful features have significantly improved our productivity. Highly recommended!"
+          </p>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="card p-6 hover-card animate-on-scroll" data-animation="slide-up">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80" 
+                   alt="Michael Chen" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <h4 class="font-bold">Michael Chen</h4>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Tech Lead</p>
+            </div>
+          </div>
+          <div class="mb-4">
+            <div class="flex text-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            </div>
+          </div>
+          <p class="text-gray-600 dark:text-gray-400 italic">
+            "As a developer, I appreciate the clean architecture and attention to detail in PFQ. The API is well-documented and the performance is outstanding."
+          </p>
+        </div>
+        
+        <!-- Testimonial 3 -->
+        <div class="card p-6 hover-card animate-on-scroll" data-animation="slide-up
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PFQ Web Application</title>
+  <meta name="description" content="PFQ Web Application - Modern, responsive, and user-friendly interface">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./dist/styles.css">
+  <script type="module" src="./src/main.js"></script>
+</head>
+<body class="bg-light text-dark">
+  <!-- Header -->
+  <header class="bg-white dark:bg-dark/95 shadow-sm sticky top-0 z-50 transition-colors duration-300">
+    <div class="container-custom py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          <a href="#" class="text-2xl font-heading font-bold gradient-text">PFQ</a>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-8">
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="#features" class="nav-link">Features</a>
+          <a href="#testimonials" class="nav-link">Testimonials</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+        
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
+        
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-button" class="md:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="md:hidden hidden pt-4 pb-2">
+        <nav class="flex flex-col space-y-4">
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="#features" class="nav-link">Features</a>
+          <a href="#testimonials" class="nav-link">Testimonials</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="section bg-gradient-to-br from-primary/10 to-secondary/10 dark:from-primary/20 dark:to-secondary/20 overflow-hidden">
+    <div class="container-custom">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="animate-on-scroll" data-animation="slide-right">
+          <span class="inline-block px-3 py-1 bg-primary/10 dark:bg-primary/20 text-primary rounded-full text-sm font-medium mb-4">
+            Welcome to the Future
+          </span>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 text-shadow-lg">
+            Discover the <span class="typewriter text-gradient">Power of PFQ</span>
+          </h1>
+          <p class="text-lg mb-8 text-gray-700 dark:text-gray-300">
+            A modern web application with a responsive and user-friendly interface.
+            Designed to provide an exceptional user experience.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="#features" class="btn btn-primary">Explore Features</a>
+            <a href="#contact" class="btn border border-dark dark:border-light hover:bg-dark hover:text-white dark:text-white dark:hover:bg-white dark:hover:text-dark">Contact Us</a>
+          </div>
+          
+          <!-- Stats -->
+          <div class="grid grid-cols-3 gap-4 mt-12">
+            <div class="text-center">
+              <div class="text-3xl font-bold text-primary counter" data-target="99">0</div>
+              <div class="text-sm text-gray-600 dark:text-gray-400">Happy Clients</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-secondary counter" data-target="15">0</div>
+              <div class="text-sm text-gray-600 dark:text-gray-400">Team Members</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-accent counter" data-target="5">0</div>
+              <div class="text-sm text-gray-600 dark:text-gray-400">Years Experience</div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center animate-on-scroll" data-animation="slide-left">
+          <div class="relative w-full max-w-md">
+            <div class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-lg blur opacity-25 animate-pulse-slow"></div>
+            <div class="relative bg-white dark:bg-dark/50 p-6 rounded-lg shadow-xl">
+              <div class="h-64 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-md flex items-center justify-center overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" 
+                     alt="Team working on digital products" 
+                     class="w-full h-full object-cover">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Floating Elements (Decorative) -->
+      <div class="absolute top-20 left-10 w-20 h-20 bg-primary/10 rounded-full blur-xl animate-bounce-slow hidden lg:block"></div>
+      <div class="absolute bottom-20 right-10 w-32 h-32 bg-secondary/10 rounded-full blur-xl animate-pulse-slow hidden lg:block"></div>
     </div>
   </section>
 
@@ -179,11 +805,14 @@
   </section>
 
   <!-- About Section -->
-  <section id="about" class="section bg-dark text-white">
+  <section id="about" class="section bg-gradient-to-br from-dark to-dark/90 text-white overflow-hidden">
     <div class="container-custom">
       <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">About PFQ</h2>
+        <div class="animate-on-scroll" data-animation="slide-right">
+          <span class="inline-block px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-medium mb-4">
+            Our Story
+          </span>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 text-gradient">About PFQ</h2>
           <p class="mb-4">
             PFQ is a modern web application designed to provide users with a seamless and intuitive experience. 
             Our team of dedicated professionals has worked tirelessly to create a platform that combines 
@@ -193,22 +822,44 @@
             Founded with a vision to revolutionize the way people interact with web applications, 
             PFQ continues to evolve and improve based on user feedback and technological advancements.
           </p>
-          <p>
+          <p class="mb-6">
             Our mission is to deliver exceptional value through innovative solutions that address 
             real-world challenges and enhance productivity.
           </p>
+          
+          <!-- Company Stats -->
+          <div class="grid grid-cols-3 gap-4 mt-8 border-t border-white/10 pt-8">
+            <div>
+              <div class="text-3xl font-bold text-primary counter" data-target="50">0</div>
+              <div class="text-sm text-gray-300">Team Members</div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold text-secondary counter" data-target="100">0</div>
+              <div class="text-sm text-gray-300">Projects Completed</div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold text-accent counter" data-target="25">0</div>
+              <div class="text-sm text-gray-300">Countries Served</div>
+            </div>
+          </div>
         </div>
-        <div class="flex justify-center">
+        <div class="flex justify-center animate-on-scroll" data-animation="slide-left">
           <div class="relative w-full max-w-md">
-            <div class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-lg blur opacity-25"></div>
-            <div class="relative bg-white p-6 rounded-lg shadow-xl">
-              <div class="h-64 bg-gray-200 rounded-md flex items-center justify-center">
-                <span class="text-gray-500">About Image</span>
+            <div class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-lg blur opacity-25 animate-pulse-slow"></div>
+            <div class="relative bg-white/5 backdrop-blur-sm p-6 rounded-lg shadow-xl border border-white/10">
+              <div class="h-64 rounded-md flex items-center justify-center overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" 
+                     alt="Team collaboration" 
+                     class="w-full h-full object-cover">
               </div>
             </div>
           </div>
         </div>
       </div>
+      
+      <!-- Floating Elements (Decorative) -->
+      <div class="absolute top-20 right-10 w-20 h-20 bg-primary/10 rounded-full blur-xl animate-bounce-slow hidden lg:block"></div>
+      <div class="absolute bottom-20 left-10 w-32 h-32 bg-secondary/10 rounded-full blur-xl animate-pulse-slow hidden lg:block"></div>
     </div>
   </section>
 
